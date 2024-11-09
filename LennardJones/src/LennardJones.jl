@@ -12,7 +12,7 @@ mutable struct Atom
     m::Float64
 end
 
-function calc_acc(as,f,rng=(0.1,1.0))
+function calc_acc(as::Vector{Atom},f::Function,rng=(0.1,1.0))::Vector{Vector{Float64}}
     accs=[]
     for a1 in as
         acc = [0.0,0.0]
@@ -26,13 +26,13 @@ function calc_acc(as,f,rng=(0.1,1.0))
     return accs 
 end
 
-function update_x!(as,accs,Δt)
+function update_x!(as::Vector{Atom},accs::Vector{Vector{Float64}},Δt::Float64)
     for (a, acc) in zip(as,accs)
         a.x +=  a.v*Δt + acc*Δt^2/2
     end
 end
 
-function update_v!(as,accs,acc_nexts,Δt)
+function update_v!(as::Vector{Atom},accs::Vector{Vector{Float64}},acc_nexts::Vector{Vector{Float64}},Δt::Float64)
     for (a, acc,acc_next) in zip(as,accs,acc_nexts)
         a.v +=  (acc+acc_next)*Δt/2
     end
