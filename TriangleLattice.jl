@@ -20,9 +20,7 @@ f_ar(r) = LennardJones.force(r,ϵ,σ)
 row = 10::Int64
 col = 10::Int64
 #---------------------------------------------------------------------------------------------------------------------------
-#as = vec([Atom([x,y],[0.0,0.0],m) for x=0.0:la:la*(col-1),y=0.0:la*√3:la*√3*(row-1)])
 as = vec([Atom([(x-1)*λ,(y-1)*√3λ],[0.0,0.0],m) for x=1:col, y=1:div(row,2)+mod(row,2)])
-#bs = vec([Atom([x,y],[0.0,0.0],m) for x=la/2:la:la*(col-1),y=la*√3/2:la*√3:la*√3*(row-1)])
 bs = vec([Atom([(x-1/2)*λ,(y-1/2)*√3λ],[0.0,0.0],m) for x=1:col-1, y=1:div(row,2)])
 append!(as,bs)
 Δt = 1e-6
