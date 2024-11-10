@@ -15,7 +15,7 @@ end
 function calc_acc(as::Vector{Atom},f::Function,rng=(0.1,1.0))::Vector{Vector{Float64}}
     accs=[]
     for a1 in as
-        acc = [0.0,0.0]
+        acc = zeros(size(a1.x))
         for a2 in as
             if a1 != a2 && (rng[1]<abs(norm(a1.x-a2.x))<rng[2])
                 acc += f(norm(a1.x-a2.x))/a1.m*(a1.x-a2.x)/norm(a1.x-a2.x)
