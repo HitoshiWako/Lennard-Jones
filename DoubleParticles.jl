@@ -38,14 +38,5 @@ anim = Animation()
     acc_nexts = calc_acc(as,f_ar)
     update_v!(as,accs,acc_nexts,Δt)
 
-#    acc1 = f_ar(a1.x-a2.x)/a1.m
-#    acc2 = f_ar(a2.x-a1.x)/a2.m
-#    a1.x += a1.v*Δt+acc1*Δt^2/2
-#    a2.x += a2.v*Δt+acc2*Δt^2/2
-#    acc_next1 = f_ar(a1.x-a2.x)/a1.m
-#    acc_next2 = f_ar(a2.x-a1.x)/a2.m
-#    a1.v += (acc1+acc_next1)/2*Δt
-#    a2.v += (acc2+acc_next2)/2*Δt
-
 end
 gif(anim,"double_LJ2.gif",fps=30)
