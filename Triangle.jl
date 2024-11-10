@@ -41,4 +41,4 @@ anim = Animation()
     update_v!(as,accs,acc_nexts,Δt)
 
 end
-gif(anim,"triangle_LJ4.gif",fps=30)
+gif(anim,"result/Triangle.gif",fps=30)

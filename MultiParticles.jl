@@ -39,4 +39,4 @@ anim = Animation()
     acc_nexts = calc_acc(as,f_ar)
     update_v!(as,accs,acc_nexts,Δt)
 end
-gif(anim,"multiparticles_LJ.gif",fps=30)
+gif(anim,"result/MultiParticles.gif",fps=30)

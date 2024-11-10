@@ -35,4 +35,4 @@ anim = Animation()
     acc_next = f_ar(a.x[1])/a.m
     a.v[1] += (acc+acc_next)/2*Δt
 end
-gif(anim,"single_LJ2.gif",fps=30)
+gif(anim,"result/SingleParticle.gif",fps=30)

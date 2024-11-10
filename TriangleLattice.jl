@@ -41,5 +41,5 @@ anim = Animation()
     acc_nexts = calc_acc(as,f_ar)
     update_v!(as,accs,acc_nexts,Δt)
 end
-gif(anim,"triangle_lattice3.gif",fps=30)
+gif(anim,"result/TriangleLattice.gif",fps=30)
 #---------------------------------------------------------------------------------------------------------------------------

@@ -39,4 +39,4 @@ anim = Animation()
     update_v!(as,accs,acc_nexts,Δt)
 
 end
-gif(anim,"double_LJ2.gif",fps=30)
+gif(anim,"result/DoubleParticles.gif",fps=30)
