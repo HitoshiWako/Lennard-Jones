@@ -3,8 +3,8 @@ using LinearAlgebra
 
 export Atom,calc_acc,update_x!,update_v!
 
-potential(r,ϵ,σ,p=12,q=6)=4ϵ*((σ/r)^p - (σ/r)^q)
-force(r,ϵ,σ,p=12,q=6)=4ϵ/r*(p*(σ/r)^p - q*(σ/r)^q)
+potential(r::Float64,ϵ::Float64,σ::Float64,p::Int64=12,q::Int64=6)=4ϵ*((σ/r)^p - (σ/r)^q)
+force(r::Float64,ϵ::Float64,σ::Float64,p::Int64=12,q::Int64=6)=4ϵ/r*(p*(σ/r)^p - q*(σ/r)^q)
 
 mutable struct Atom
     x::Vector{Float64}
@@ -12,7 +12,7 @@ mutable struct Atom
     m::Float64
 end
 
-function calc_acc(as::Vector{Atom},f::Function,rng=(0.1,1.0))::Vector{Vector{Float64}}
+function calc_acc(as::Vector{Atom},f::Function,rng::Tuple{Float64,Float64}=(0.1,1.0))::Vector{Vector{Float64}}
     accs=[]
     for a1 in as
         acc = zeros(size(a1.x))
